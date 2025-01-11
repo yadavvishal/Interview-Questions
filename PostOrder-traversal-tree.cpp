@@ -31,13 +31,13 @@ struct Node*insert(struct Node*root,int data){
     return root;
 }
 
-void inorder(struct Node*root){
+void postorder(struct Node*root){
     if(root==NULL){
         return;
     }
     
-    inorder(root->left);
-    inorder(root->right);
+    postorder(root->left);
+    postorder(root->right);
     cout<<root->data<<" ";
 }
 
@@ -51,6 +51,6 @@ int main() {
     insert(root,82);
     insert(root,17);
     
-    inorder(root);
+    postorder(root);
     return 0;
 }
