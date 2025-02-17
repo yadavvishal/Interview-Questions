@@ -7,16 +7,16 @@ using namespace std;
 
 int solve(string str){
     unordered_set<char>st;
-    int left=0;
+    int j=0;
     int maxLength=0;
 
-    for(int right=0;right<str.length();right++){
-        while(st.find(str[right])!=st.end()){
-            st.erase(str[left]);
-            left++;
+    for(int i=0;i<str.length();i++){
+        while(st.find(str[i])!=st.end()){
+            st.erase(str[j]);
+            j++;
         }
-        st.insert(str[right]);
-        maxLength=max(maxLength, right-left+1);
+        st.insert(str[i]);
+        maxLength=max(maxLength, i-j+1);
 
     }
     return maxLength;
